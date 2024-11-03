@@ -42,4 +42,4 @@ jobs:
         SDL_VIDEODRIVER: "dummy"
         SDL_AUDIODRIVER: "disk"
       run: |
-        pytest -s
+        python -m pytest -s
