@@ -89,7 +89,10 @@ point_radius = 5  # promień okręgu oznaczającego wierzchołek wielokąta
 
 # -------------- RYSOWANIE OKNA --------------
 
-pygame.init()
+#pygame.init() generalny init powoduje ze audio sie wlacza ktorego nie ma
+pygame.display.init()
+pygame.font.init()
+# pygame.mixer.init()  # disable sound
 screen = pygame.display.set_mode((window_width, window_height))
 
 screen.fill(GREY)
