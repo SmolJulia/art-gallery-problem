@@ -34,7 +34,7 @@ def wyswietl_komunikat(teksty: Union[str, List[str]], screen, komunikat_font_siz
     - teksty: lista tekstów (każdy element to nowa linijka)
     - screen: obiekt ekranu Pygame
     - komunikat_rect: prostokąt, w którym ma zostać wyświetlony komunikat
-    - komunikat_font_size: rozmiar czcionki (domyślnie 240)
+    - komunikat_font_size: rozmiar czcionki (domyślnie 24)
     - color: kolor tekstu (domyślnie czarny)
     '''
     if isinstance(teksty, str):
