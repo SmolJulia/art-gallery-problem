@@ -39,7 +39,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       env:
-        VIDEODRIVER: "dummy"
-        AUDIODRIVER: "disk"
+        ALSA_VIDEODRIVER: "dummy"
+        ALSA_AUDIODRIVER: "disk"
       run: |
         pytest -s
