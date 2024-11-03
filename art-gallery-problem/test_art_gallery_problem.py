@@ -1,1 +1,1 @@
-from test_user_input_polygon.py import *
+from test_user_input_polygon import *
