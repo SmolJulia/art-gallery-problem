@@ -39,4 +39,4 @@ jobs:
         python -m pip install pygame
     - name: Test with pytest
       run: |
-        pytest art-gallery-problem/test_wspolrzedne_punktow.csv
+        pytest test_art_gallery_problem.py
