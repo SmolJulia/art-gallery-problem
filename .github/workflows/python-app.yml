@@ -39,4 +39,4 @@ jobs:
         python -m pip install pygame
     - name: Test with pytest
       run: |
-        pytest 
+        pytest test_wspolrzedne_punktow.csv
