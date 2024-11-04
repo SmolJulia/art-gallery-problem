@@ -1,0 +1,15 @@
+name: Test Project
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: npm ci
+    - run: npm pytest
+    - run: npm run build
