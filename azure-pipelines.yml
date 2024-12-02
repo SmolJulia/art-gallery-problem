@@ -4,10 +4,8 @@ trigger:
 pool: my-personal-computer
 strategy:
   matrix:
-    Python36:
-      python.version: '3.6'
-    Python37:
-      python.version: '3.7'
+    Python312:
+      python.version: '3.12'
 
 steps:
 - task: UsePythonVersion@0
