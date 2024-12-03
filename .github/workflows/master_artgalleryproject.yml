@@ -1,45 +1,118 @@
-trigger:
-- main
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 
-pool:
-  vmImage: ubuntu-latest
+# More GitHub Actions for Azure: https://github.com/Azure/actions
 
-strategy:
-  matrix:
-    Python310:
-      python.version: '3.10'
-    Python311:
-      python.version: '3.11'
-    Python312:
-      python.version: '3.12'
 
-steps:
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: '$(python.version)'
-    displayName: 'Use Python $(python.version)'
 
-  - script: |
-      python -m pip install --upgrade pip
-      pip install -r requirements.txt
-    displayName: 'Install dependencies'
+name: Build and deploy ASP.Net Core app to Azure Web App - ArtGalleryProject
 
-  - task: ArchiveFiles@2
-    displayName: 'Archive files'
-    inputs:
-      rootFolderOrFile: $(System.DefaultWorkingDirectory)
-      includeRootFolder: false
-      archiveType: zip
-      archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-$(python.version).zip
-      replaceExistingArchive: true
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      ArtifactName: 'drop'
-      publishLocation: 'Container'
 
-  - script: |
-      pip install pytest pytest-azurepipelines
-      pytest
-    displayName: 'pytest'
+on:
+
+  push:
+
+    branches:
+
+      - master
+
+  workflow_dispatch:
+
+
+
+jobs:
+
+  build:
+
+    runs-on: windows-latest
+
+
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+
+
+      - name: Set up .NET Core
+
+        uses: actions/setup-dotnet@v4
+
+        with:
+
+          dotnet-version: '6.0.x'
+
+
+
+      - name: Build with dotnet
+
+        run: dotnet build --configuration Release
+
+
+
+      - name: dotnet publish
+
+        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+
+
+
+      - name: Upload artifact for deployment job
+
+        uses: actions/upload-artifact@v4
+
+        with:
+
+          name: .net-app
+
+          path: ${{env.DOTNET_ROOT}}/myapp
+
+
+
+  deploy:
+
+    runs-on: windows-latest
+
+    needs: build
+
+    environment:
+
+      name: 'Production'
+
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    permissions:
+      id-token: write #This is required for requesting the JWT
+
+
+    steps:
+
+      - name: Download artifact from build job
+
+        uses: actions/download-artifact@v4
+
+        with:
+
+          name: .net-app
+
+      
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.__clientidsecretname__ }}
+          tenant-id: ${{ secrets.__tenantidsecretname__ }}
+          subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
+
+
+      - name: Deploy to Azure Web App
+
+        id: deploy-to-webapp
+
+        uses: azure/webapps-deploy@v3
+
+        with:
+
+          app-name: 'ArtGalleryProject'
+
+          slot-name: 'Production'
+
+          package: .
