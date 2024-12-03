@@ -60,6 +60,8 @@ jobs:
         with:
           name: .net-app
           path: ${{env.GITHUB_WORKSPACE}}\myapp
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Login to Azure
         uses: azure/login@v2
