@@ -16,7 +16,7 @@ from pliki_zrodlowe.konfiguracja_okna import canvas_width, canvas_height
 l = oblicz_liczbe_straznikow()
 file_name = os.path.basename(file_path)
 
-class test_kwadrat():  
+class TestKwadrat:  
   if file_name == "kwadrat.csv":
     assert l == 1
 
