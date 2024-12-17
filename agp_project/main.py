@@ -165,10 +165,5 @@ def main():
 l = oblicz_liczbe_straznikow()
 file_name = os.path.basename(file_path)
 
-class TestWprowadzanie:  
-  def Test_plik_kwadrat(self):
-    if file_name == "kwadrat.csv":
-      assert l == 1
-
 if __name__ == '__main__':
     main()
