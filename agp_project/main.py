@@ -1,6 +1,7 @@
 # Plik główny, zawierający main()
 
 import pygame
+import os
 from pliki_zrodlowe.funkcje_pomocnicze import *
 from pliki_zrodlowe.konfiguracja_okna import *
 from pliki_zrodlowe.rysowanie_okna import *
@@ -161,6 +162,13 @@ def main():
 
     pygame.quit()
 
+l = oblicz_liczbe_straznikow()
+file_name = os.path.basename(file_path)
+
+class TestWprowadzanie:  
+  def Test_plik_kwadrat(self):
+    if file_name == "kwadrat.csv":
+      assert l == 1
 
 if __name__ == '__main__':
     main()
