@@ -1,5 +1,5 @@
 import os
-from agp_project.pliki_zrodlowe.triangulacja import oblicz_liczbe_straznikow #agp_project.main #agp_project.pliki_zrodlowe.wprowadzanie_pliku
+from agp_project.pliki_zrodlowe.triangulacja import oblicz_liczbe_straznikow
 from agp_project.pliki_zrodlowe.wprowadzanie_pliku import *
 
 l = oblicz_liczbe_straznikow()
