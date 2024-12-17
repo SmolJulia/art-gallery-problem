@@ -18,6 +18,6 @@ file_name = os.path.basename(file_path)
 
 class TestKwadrat:  
   def Test_plik_kwadrat(self):
-  if file_name == "kwadrat.csv":
-    assert l == 1
+    if file_name == "kwadrat.csv":
+      assert l == 1
 
