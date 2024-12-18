@@ -11,19 +11,18 @@ file_name = os.path.basename(filepath)
 
 class TestWprowadzanie:  
   def Test_plik_kwadrat(self):
-        # Simulate file selection via filedialog
-        file_path = plik_z_okna_dialogowego()  # This will prompt the user to select a file
+        fake_file_path = os.path.abspath('agp_project/pliki_wielokat/kwadrat.csv')
+        mock_askopenfilename.return_value = fake_file_path
+
+        # Simulate the file selection
+        file_path = plik_z_okna_dialogowego()
         
-        # Convert the file path to an absolute path
-        file_path = os.path.abspath(file_path)
-        
-        # Extract the file name from the absolute file path
+        # Extract the file name and check if it's 'kwadrat.csv'
         file_name = os.path.basename(file_path)
-        
-        # Check if the file name is 'kwadrat.csv'
+
         if file_name == "kwadrat.csv":
-            # Call the function with the selected file path
+            # Run the function with the mocked file path (which doesn't exist on disk)
             l = oblicz_liczbe_straznikow(file_path)
             
-            # Assert the expected value
+            # Check that the result is what we expect for 'kwadrat.csv'
             assert l == 1
