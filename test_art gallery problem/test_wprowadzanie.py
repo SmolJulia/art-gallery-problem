@@ -9,5 +9,5 @@ file_name = os.path.basename(filepath)
 
 class TestWprowadzanie:  
   def Test_plik_kwadrat(self):
-      filepath = os.path.abspath('agp_project/pliki_wielokat/kwadrat.csv')
+    if file_name == "kwadrat.csv":
       assert l == 1
