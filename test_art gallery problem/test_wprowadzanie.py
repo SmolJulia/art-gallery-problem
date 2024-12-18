@@ -1,7 +1,8 @@
 import os
 from agp_project.pliki_zrodlowe.triangulacja import oblicz_liczbe_straznikow
 from agp_project.pliki_zrodlowe.wprowadzanie_pliku import *
-os.chdir('agp_project/pliki_wielokat')
+from agp_project.main import *
+
 
 l = oblicz_liczbe_straznikow()
 file_name = os.path.basename(file_path)
