@@ -18,10 +18,10 @@ def read_coordinates_from_csv(filepath):
     Zwraca krotkę ze współrzędnymi.
     '''
     def read_coordinates_from_csv(filepath):
-    if not os.path.isabs(filepath):
-        # If filepath is not absolute, resolve it relative to the script
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        filepath = os.path.join(base_dir, filepath)
+        if not os.path.isabs(filepath):
+            # If filepath is not absolute, resolve it relative to the script
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            filepath = os.path.join(base_dir, filepath)
     with open(filepath) as f:
         reader = csv.reader(f, delimiter=',')
         next(reader, None)  # ominięcie pierwszej linijki z nagłówkami
