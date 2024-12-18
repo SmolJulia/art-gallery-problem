@@ -5,9 +5,9 @@ from agp_project.main import *
 os.chdir('agp_project/pliki_wielokat')
 
 l = oblicz_liczbe_straznikow()
-file_name = os.path.basename(file_path)
+file_name = os.path.basename(filepath)
 
 class TestWprowadzanie:  
   def Test_plik_kwadrat(self):
-    if file_name == "kwadrat.csv":
+      filepath = os.path.abspath('agp_project/pliki_wielokat/kwadrat.csv')
       assert l == 1
