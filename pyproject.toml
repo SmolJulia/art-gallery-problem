@@ -1,4 +1,4 @@
 [tool.pytest.ini_options] 
 pythonpath = [
- "agp_project",  "agp_project/pliki_wielokat", "agp_project/pliki_zrodlowe"
+ "test_agp_project",  "test_agp_project/test_pliki_wielokat", "test_agp_project/test_pliki_zrodlowe"
 ]
