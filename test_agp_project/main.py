@@ -2,11 +2,11 @@
 
 import pygame
 import os
-from pliki_zrodlowe.funkcje_pomocnicze import *
-from pliki_zrodlowe.konfiguracja_okna import *
-from pliki_zrodlowe.rysowanie_okna import *
-from pliki_zrodlowe.triangulacja import *
-from pliki_zrodlowe.wprowadzanie_pliku import *
+from test_pliki_zrodlowe.funkcje_pomocnicze import *
+from test_pliki_zrodlowe.konfiguracja_okna import *
+from test_pliki_zrodlowe.rysowanie_okna import *
+from test_pliki_zrodlowe.triangulacja import *
+from test_pliki_zrodlowe.wprowadzanie_pliku import *
 
 
 def main():
@@ -22,7 +22,7 @@ def main():
     ktory_aktywny = None
     ktore_mozliwe = [False, False, False]  # które z trzech pierwszych opcji aktywne i które są możliwe
     menu = wyswietl_menu(screen, ktory_aktywny, ktore_mozliwe)
-    rysunki_do_wyswietlenia = ['pliki_wielokat/rysunek_wielokat.png', 'pliki_wielokat/rysunek_triangulacja.png', 'pliki_wielokat/rysunek_straznicy.png']
+    rysunki_do_wyswietlenia = ['test_pliki_wielokat/rysunek_wielokat.png', 'test_pliki_wielokat/rysunek_triangulacja.png', 'test_pliki_wielokat/rysunek_straznicy.png']
 
     # Główna pętla programu
     running = True
