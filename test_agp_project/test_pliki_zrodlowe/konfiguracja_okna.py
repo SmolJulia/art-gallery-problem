@@ -1,4 +1,4 @@
-# Zmienne dotycz¹ce wygl¹du interfejsu, u¿ywane w innych plikach Ÿród³owych
+# Zmienne dotyczé‰e wyglé‰…u interfejsu, uç¯¡wane w innych plikach î¶°éšé€™wych
 
 import pygame
 
@@ -14,18 +14,18 @@ YELLOW = (255, 255, 100)
 GREEN = (100, 255, 100)
 DARK_BLUE = (0, 0, 180)
 
-# Wymiary elementów okna
-canvas_width, canvas_height = 700, 500  # Wymiary p³ótna
-komunikat_width, komunikat_height = canvas_width, 40  # Wymiary komunikatów wyœwietlanych na górze okna
-odstep_gora, odstep_lewa, odstep_dol, odstep_prawa = 10, 40, 80, 200  # Odstêpy elementów od krawêdzi
+# Wymiary elementé—š okna
+canvas_width, canvas_height = 700, 500  # Wymiary på ¯tna
+komunikat_width, komunikat_height = canvas_width, 40  # Wymiary komunikaté—š wyî¯ietlanych na géze okna
+odstep_gora, odstep_lewa, odstep_dol, odstep_prawa = 10, 40, 80, 200  # Odstç˜¼y elementé—š od krawç’ zi
 
-# Wyliczenia wymiarów okna
+# Wyliczenia wymiaré—š okna
 window_width = canvas_width + odstep_lewa + odstep_prawa
 window_height = canvas_height + komunikat_height + 2 * odstep_gora + odstep_dol
 
-# Wspó³rzêdne elementów
+# Wspé¦§rzç’ ne elementé—š
 canvas_rect = pygame.Rect(odstep_lewa, komunikat_height + 2 * odstep_gora, canvas_width, canvas_height)
 komunikat_rect = pygame.Rect(odstep_lewa, odstep_gora, komunikat_width, komunikat_height)
 wspolrzedne_rect = pygame.Rect(odstep_lewa, window_height - odstep_dol/2, canvas_width, odstep_dol/2)
 
-point_radius = 5  # promieñ ko³a oznaczaj¹cego wierzcho³ek wprowadzanego wielok¹ta
+point_radius = 5  # promieï¿½ koè±‰ oznaczajé‰ego wierzchoè²«k wprowadzanego wieloké–a
