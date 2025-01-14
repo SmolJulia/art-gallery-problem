@@ -4,8 +4,8 @@ import re
 from itertools import islice
 import tkinter as tk
 from tkinter import filedialog
-from pliki_zrodlowe.konfiguracja_okna import canvas_width, canvas_height
-from pliki_zrodlowe.funkcje_pomocnicze import sprawdz_samoprzeciecia, zapisz_wspolrzedne
+from test_pliki_zrodlowe.konfiguracja_okna import canvas_width, canvas_height
+from test_pliki_zrodlowe.funkcje_pomocnicze import sprawdz_samoprzeciecia, zapisz_wspolrzedne
 
 
 def plik_z_okna_dialogowego():
