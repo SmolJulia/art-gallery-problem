@@ -11,7 +11,7 @@ import matplotlib.patches as patches
 import matplotlib
 matplotlib.use('Agg')
 import numpy as np
-from pliki_zrodlowe.konfiguracja_okna import canvas_width, canvas_height
+from test_pliki_zrodlowe.konfiguracja_okna import canvas_width, canvas_height
 
 
 def read_coordinates_from_csv(filepath):
@@ -91,7 +91,7 @@ def min_guards(coloring):
 
 def oblicz_liczbe_straznikow():
     '''Zwraca liczbę strażników dla wielokąta zdefiniowanego w pliku wspolrzedne_punktow.csv'''
-    f = 'pliki_wielokat/wspolrzedne_punktow.csv'
+    f = 'test_pliki_wielokat/wspolrzedne_punktow.csv'
     coordinates = read_coordinates_from_csv(f)
     triangles = triangulate_polygon(coordinates)
     coloring = three_coloring(coordinates, triangles)
@@ -107,7 +107,7 @@ def zapisz_obrazy():
     '''
 
     # pobranie danych z pliku i obliczenie triangulacji, minimalnego kolorowania i strażników
-    f = 'pliki_wielokat/wspolrzedne_punktow.csv'
+    f = 'test_pliki_wielokat/wspolrzedne_punktow.csv'
     coordinates = read_coordinates_from_csv(f)
     triangles = triangulate_polygon(coordinates)
     coloring = three_coloring(coordinates, triangles)
@@ -128,7 +128,7 @@ def zapisz_obrazy():
     plt.fill(x, y, 'y')
     for guard in guards:  # zaznaczenie wierzchołków ze strażnikami
         ax.plot(guard[0], guard[1], marker_strings[min_color], markersize = 10, markeredgecolor='k')
-    plt.savefig('pliki_wielokat/rysunek_wielokat.png', bbox_inches='tight', pad_inches=0, dpi=600)
+    plt.savefig('test_pliki_wielokat/rysunek_wielokat.png', bbox_inches='tight', pad_inches=0, dpi=600)
 
     # pokolorowany wielokąt + triangulacja + kolorowanie wierzchołków
     for triangle in triangles:
@@ -142,7 +142,7 @@ def zapisz_obrazy():
             ax.plot(vertex[0], vertex[1], marker_str, markersize=10, markeredgecolor='k')  # wyróżnienie wierzchołków będących strażnikami
         else:
             ax.plot(vertex[0], vertex[1], marker_str, markersize=5)
-    plt.savefig('pliki_wielokat/rysunek_triangulacja.png', bbox_inches='tight', pad_inches=0, dpi=600)
+    plt.savefig('test_pliki_wielokat/rysunek_triangulacja.png', bbox_inches='tight', pad_inches=0, dpi=600)
 
     # obszary, które widzą strażnicy
     plt.cla()
@@ -166,5 +166,5 @@ def zapisz_obrazy():
         triangle_color = guard_colors[guard_index]
         plt.fill(x, y, color=triangle_color)
     plt.scatter(guards_x, guards_y, c=guard_colors, linewidth=1, s=100, edgecolor='black')
-    plt.savefig('pliki_wielokat/rysunek_straznicy.png', bbox_inches='tight', pad_inches=0, dpi=600)
+    plt.savefig('test_pliki_wielokat/rysunek_straznicy.png', bbox_inches='tight', pad_inches=0, dpi=600)
         
