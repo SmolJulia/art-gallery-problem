@@ -2,9 +2,9 @@
 
 import pygame
 import pandas as pd
-from rysowanie_okna import *
-from funkcje_pomocnicze import *
-from triangulacja import zapisz_obrazy
+from test_rysowanie_okna import *
+from test_funkcje_pomocnicze import *
+from test_triangulacja import zapisz_obrazy
 
 
 def main():
