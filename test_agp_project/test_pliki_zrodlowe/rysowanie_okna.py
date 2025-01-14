@@ -3,8 +3,8 @@
 
 import pygame
 from typing import List, Union
-from pliki_zrodlowe.funkcje_pomocnicze import wspol_osiowe, wyswietl_tekst
-from pliki_zrodlowe.konfiguracja_okna import *
+from test_pliki_zrodlowe.funkcje_pomocnicze import wspol_osiowe, wyswietl_tekst
+from test_pliki_zrodlowe.konfiguracja_okna import *
 
 
 def init_window():
