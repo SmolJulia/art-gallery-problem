@@ -8,7 +8,7 @@
 import pygame
 import csv
 from typing import List, Tuple, Union
-from  pliki_zrodlowe.konfiguracja_okna import *
+from  test_pliki_zrodlowe.konfiguracja_okna import *
 
 
 def circle_collidepoint(center: Tuple[int, int], radius: float, point: Tuple[int, int]) -> bool:
@@ -23,7 +23,7 @@ def circle_collidepoint(center: Tuple[int, int], radius: float, point: Tuple[int
 
 def zapisz_wspolrzedne(punkty: List[Tuple[int, int]]) -> None:
     '''Zapisuje współrzędne punktów do pliku wspolrzedne_punktow.csv'''
-    with open('pliki_wielokat/wspolrzedne_punktow.csv', 'w', newline='') as csvfile:
+    with open('test_pliki_wielokat/wspolrzedne_punktow.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['X', 'Y'])  # Nagłówki kolumn
         for punkt in punkty:
